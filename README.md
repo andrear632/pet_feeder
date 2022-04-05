@@ -17,6 +17,11 @@ The board is connected through MQTT-SN to an RSMB broker hosted on the machine t
 
 A transparent bridge written in python is used to forward messages to and from AWS IoTCore. It runs on the machine the board is connected to. It reads messages from the local broker with “topic_out” and publishes them to AWS IoTCore on the same topic. It also reads messages from AWS IoTCore with “topic_in” and publishes them on the local broker with the same topic.
 
+Once data arrives to AWS IoTCore the computation proceeds on the AWS cloud using the following services: DynamoDB, Lambda, API Gateway, Amplify.
+
+<img src="./Media/diagram.png" width="80%">
+
+## Network
 In the network there will be transmitted only the fill level coming from the board and the dispense message going to the board. These messages are less than 25 bytes, so even a narrow band will be suitable for our use. Low latency is required to deliver the dispense message, as the user expects its action of clicking the button on the web dashboard to be executed in the range of 1 to 5 seconds.
 - The average measured latency of the system from the moment in which the ultrasonic sensor is asked to read the fill level to the point in which the result is integrated in the dashboard is less than 2 seconds. That is also because of the time the browser takes to update after it receives a message from the WebSocket.
 - The average measured latency of the system from the moment in which the user requests a dispense from the dashboard to the point in which the stepper motor actually dispenses food is less than 1 second.
@@ -25,10 +30,6 @@ In the network there will be transmitted only the fill level coming from the boa
 These latencies are short enough to not affect the usability of the system and are compliant with the objectives set before the development.
 
 Data is transmitted every time the user asks to dispense food and every time food is dispensed (to store the fill level in the cloud). In the first case the message will have a fixed length of 22 bytes. In the second case the message will have a fixed length of 17 bytes. Clearly there will be overhead due to headers necessary to transmit the messages. MQTT-SN was chosen as the protocol to transmit messages because of its characteristics suitable for IoT applications, in particular for its small overhead.
-
-Once data arrives to AWS IoTCore the computation proceeds on the AWS cloud using the following services: DynamoDB, Lambda, API Gateway, Amplify.
-
-<img src="./Media/diagram.png" width="80%">
 
 ## Logic
 The IoT system follows the 'Sense-Think-Act' paradigm.
