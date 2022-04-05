@@ -57,10 +57,7 @@ IoTCore:
 - rule: perfeeder_store; rule query statement: SELECT message FROM 'topic_out'; actions:
 Insert a message into a DynamoDB table (partition key value: ${timestamp()}; write message data to this column: fill_level) and
 Send a message to a lambda function (send_to_websocket.py).
-
-Messages format:
-- topic: topic_in; {“message” : “dispense”}
-- topic: topic_out; {“message” : “%value”} where %value is an integer
+- messages format: topic_in {“message” : “dispense”}; topic_out {“message” : “%value”} where %value is an integer
 
 Lambda functions:
 - publish_dispense_to_iotcore: publishes the dispense message to topic_in.
