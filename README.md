@@ -43,21 +43,21 @@ The application collects and stores only the fill level coming from the ultrason
 The computation linked to sensors and actuators is carried on entirely on the board, while the cloud only manages the communications with the user via the web dashboard. The following AWS services were used:
 
 DynamoDB:
-- table: connections; partition key: conn_id (String)
-- table: pet_feeder; partition key: id_time (Number); column: fill_level (String)
+- table: connections; partition key: conn_id (String).
+- table: pet_feeder; partition key: id_time (Number); column: fill_level (String).
 
 API Gateway:
-- name: update_level; protocol: WebSocket; routes: connect (linked to lambda function websocket_connect.py) and disconnect (linked to lambda function websocket_disconnect.py)
-- name: petfeeder_api; protocol: REST; resources: GET (linked to lambda function read_level_from_db.py) and POST (linked to lambda function publish_dispense_to_iotcore.py)
+- name: update_level; protocol: WebSocket; routes: connect (linked to lambda function websocket_connect.py) and disconnect (linked to lambda function websocket_disconnect.py).
+- name: petfeeder_api; protocol: REST; resources: GET (linked to lambda function read_level_from_db.py) and POST (linked to lambda function publish_dispense_to_iotcore.py).
 
 AWS Amplify:
-- Code inside WebApp folder
+- Code inside WebApp folder.
 
 IoTCore:
 - rule: perfeeder_store; rule query statement: SELECT message FROM 'topic_out'; actions:
 Insert a message into a DynamoDB table (partition key value: ${timestamp()}; write message data to this column: fill_level) and
 Send a message to a lambda function (send_to_websocket.py).
-- messages format: topic_in {“message” : “dispense”}; topic_out {“message” : “%value”} where %value is an integer
+- messages format: topic_in {“message” : “dispense”}; topic_out {“message” : “%value”} where %value is an integer.
 
 Lambda functions:
 - publish_dispense_to_iotcore: publishes the dispense message to topic_in.
