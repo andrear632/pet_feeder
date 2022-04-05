@@ -93,12 +93,17 @@ In the folder mosquitto.rsmb/rsmb launch the command “./src/broker_mqtts confi
 
 ## Miscellaneous
 Some 3D models for printed parts were taken from the following links:
-https://www.thingiverse.com/thing:14452
-https://www.thingiverse.com/thing:548975
-https://www.thingiverse.com/thing:3051036
+- https://www.thingiverse.com/thing:14452
+- https://www.thingiverse.com/thing:548975
+- https://www.thingiverse.com/thing:3051036
+
 Two accessories were designed specifically for this project. All 3D models can be found in the 3D folder.
 
+
 [Here](https://www.youtube.com/) is the video of a demonstration of the final system.
+
 [Here](https://www.hackster.io/) is a step-by-step tutorial.
+
 [Here](https://www.hackster.io/) is a blog post related to this project.
+
 [Here](https://dev.d26dl44y42s2gz.amplifyapp.com) is the dashboard.
