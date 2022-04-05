@@ -32,7 +32,7 @@ These latencies are short enough to not affect the usability of the system and a
 Data is transmitted every time the user asks to dispense food and every time food is dispensed (to store the fill level in the cloud). In the first case the message will have a fixed length of 22 bytes. In the second case the message will have a fixed length of 17 bytes. Clearly there will be overhead due to headers necessary to transmit the messages. MQTT-SN was chosen as the protocol to transmit messages because of its characteristics suitable for IoT applications, in particular for its small overhead.
 
 ## Logic
-The IoT system follows the 'Sense-Think-Act' paradigm.
+This IoT system follows the 'Sense-Think-Act' paradigm.
 
 When the PIR motion sensor detects a pet walking past the dispenser it sends an impulse to an analog pin which is read every second. When the impulse is detected a callback function is called and the stepper motor is activated to do 2000 steps and dispense food. A timer is set to disable the stepper for a certain amount of time and avoid it dispensing food every time the pet walks past. The user can also dispense food from remotely using a web dashboard.
 
