@@ -40,7 +40,9 @@ After having dispensed food, the ultrasonic sensor is activated to measure the f
 
 The application collects and stores only the fill level coming from the ultrasonic sensor. This happens after every time food is dispensed, both if as a consequence of motion detection or if the user has manually dispensed it. These data are then stored in AWS DynamoDB to be included in the web dashboard.
 
-The computation linked to sensors and actuators is carried on entirely on the board, while the cloud only manages the communications with the user via the web dashboard. The following AWS services were used:
+The computation linked to sensors and actuators is carried on entirely on the board. This choice was made because the board could provide the required computational power and it avoided higher latencies to send data to the cloud and retrieve the instructions to be performed. This choice also reduced the number of messages exchanged over the network and the cloud usage.
+
+The cloud only manages the communications with the user via the web dashboard. The following AWS services were used:
 
 DynamoDB:
 - table: connections; partition key: conn_id (String).
@@ -87,7 +89,7 @@ In the folder mosquitto.rsmb/rsmb launch the command “./src/broker_mqtts confi
 
 4. Inside the file transparent_bridge.py configure the following parameters: host, rootCAPath, certificatePath, privateKeyPath. You should download the necessary files from AWS IotCore. Launch the transparent bridge using the command “python3 transparent_bridge.py”.
 
-5. Clone the [RIOT repository](https://github.com/RIOT-OS/RIOT.git) to your machine and put it inside our RiotCode folder. Then connect the board to the machine and launch the command “make flash” to compile the code and upload it to the MCU. On the machine launch the command "sudo ip a a 2000:2::1 dev tap0". Restart the board through the reset button.
+5. Clone the [RIOT repository](https://github.com/RIOT-OS/RIOT.git) to your machine and put it inside our RiotCode folder. You can adjust the time between automatic dispensing by modifying the defined value of `INTERVAL` in the file “main.c”. Then connect the board to the machine and launch the command “make flash” to compile the code and upload it to the MCU. On the machine launch the command "sudo ip a a 2000:2::1 dev tap0". Restart the board through the reset button.
 
 6. Open the Web App at the link provided by AWS Amplify and use the system!
 
