@@ -89,7 +89,7 @@ In the folder mosquitto.rsmb/rsmb launch the command “./src/broker_mqtts confi
 
 4. Inside the file transparent_bridge.py configure the following parameters: host, rootCAPath, certificatePath, privateKeyPath. You should download the necessary files from AWS IotCore. Launch the transparent bridge using the command “python3 transparent_bridge.py”.
 
-5. Clone the [RIOT repository](https://github.com/RIOT-OS/RIOT.git) to your machine and put it inside our RiotCode folder. You can adjust the time between automatic dispensing by modifying the defined value of `INTERVAL` in the file “main.c”. Then connect the board to the machine and launch the command “make flash” to compile the code and upload it to the MCU. On the machine launch the command "sudo ip a a 2000:2::1 dev tap0". Restart the board through the reset button.
+5. Clone the [RIOT repository](https://github.com/RIOT-OS/RIOT.git) to your machine and put it inside our RiotCode folder. You can adjust the time between automatic dispensing by modifying the defined value of `INTERVAL` in the file “main.c”. Then connect the board to the machine and launch the command “make flash” to compile the code and upload it to the MCU. On the machine launch the command "sudo ip a a 2000:2::1 dev tap0" (You can automate this step by inserting the same command inside the function create_tap() in RIOT/dist/tools/ethos/start_network.sh). Restart the board through the reset button.
 
 6. Open the Web App at the link provided by AWS Amplify and use the system!
 
