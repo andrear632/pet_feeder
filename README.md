@@ -108,4 +108,4 @@ Two accessories were designed specifically for this project. All 3D models can b
 
 [Here](https://www.hackster.io/) is a blog post related to this project.
 
-[Here](https://dev.d26dl44y42s2gz.amplifyapp.com) is the dashboard.
+[Here](https://iot.andrearodriguez.it) is the dashboard.
