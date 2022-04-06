@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pet feeder</title>
+    <link rel="stylesheet" href="index.css">
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+    <script src="index.js"></script>
+</head>
+<body onload="Init()">
+    <h1>Automatic pet feeder</h1>
+    <div id="descr">Individual project for the IoT course 2022 at La Sapienza University of Rome. <a href="https://github.com/andrear632/pet_feeder">Link</a> to github.</div>
+    <div class="inline"><canvas id="myChart" style="width:100%;max-width:700px"></canvas></div>
+    <div class="inline" id="info"></div>
+    <div></div>
+    <p id="central">From <span id="firsttime">00:00</span> pet food was dispensed <span id="count">0</span> times. The plot shows the fill level of the dispenser.</p>
+    <div></div>
+    <div id="clickhere" class="inline">Click this button to dispense food to your pet! <span id="arrow">&#8594;</span></div>
+    <div class="inline">
+        <form>
+            <button type="button" id="disp" onclick="dispense()">Dispense</button>
+        </form>
+    </div>
+    <div id="dispensed" class="inline"></div>
+</body>
+</html>
