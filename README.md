@@ -5,7 +5,7 @@ The project was born from the need to feed my pet automatically or manually from
 
 ## Architecture
 The IoT device is developed using RIOT-OS and a STM NUCLEO-f401re board. The cloud-based services are based on the AWS ecosystem.
-The system is composed by two sensors and two actuators:
+The system includes two sensors and two actuators:
 - Ultrasonic sensor (HC SR04): measures the fill level of the dispenser. It is put on top of the food container and measures the distance from the food. While it is dispensed, the level goes down and the ultrasonic measures bigger distances.
 After it has been activated, this sensor returns an echo back whose pulse width (uS) is proportional to the distance measured. This value can be divided by 58 to obtain the distance in cm. The resolution is 0.3cm and the minimum distance that can be measured is 2cm. For that reason, the sensor was placed 2cm above the maximum fill level of the food container.
 When the container is empty the sensor is going to measure the distance from the screw. This distance will depend on the current rotation position of the screw, so values bigger than the threshold (5.69cm - 330uS) will be considered as empty level. The container will be considered filled when the sensor measures a distance equal to 2.59cm (150uS).
