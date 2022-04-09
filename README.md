@@ -110,7 +110,7 @@ Two accessories were designed specifically for this project. All 3D models can b
 
 [Here](https://dev.d26dl44y42s2gz.amplifyapp.com) is the dashboard.
 
-## Media
+## Gallery
 
 <img src="./Media/img1.jpg" width="40%">
 <img src="./Media/img2.jpg" width="40%">
