@@ -22,14 +22,18 @@ Once data arrives to AWS IoTCore the computation proceeds on the AWS cloud using
 <img src="./Media/diagram.png" width="80%">
 
 ## Network
-In the network there will be transmitted only the fill level coming from the board and the dispense message going to the board. These messages are less than 25 bytes, so even a narrow band will be suitable for our use. Low latency is required to deliver the dispense message, as the user expects its action of clicking the button on the web dashboard to be executed in the range of 1 to 5 seconds.
+In the network there will be transmitted only the fill level coming from the board and the dispense message going to the board. These messages are less than 10 bytes, so even a narrow band will be suitable for our use. Low latency is required to deliver the dispense message, as the user expects its action of clicking the button on the web dashboard to be executed in the range of 1 to 5 seconds.
 - The average measured latency of the system from the moment in which the ultrasonic sensor is asked to read the fill level to the point in which the result is integrated in the dashboard is less than 2 seconds. That is also because of the time the browser takes to update after it receives a message from the WebSocket.
 - The average measured latency of the system from the moment in which the user requests a dispense from the dashboard to the point in which the stepper motor actually dispenses food is less than 1 second.
-- The average round trip time from the moment in which the user requests a dispense from the dashboard to the point in which the new fill level is integrated in the dashboard is less than 5 seconds. That is because the fill level is measured after the dispenser has finished dispensing food and this process takes up to 2 seconds.
+- The average round trip time from the moment in which the user requests a dispense from the dashboard to the point in which the new fill level is integrated in the dashboard is less than 7 seconds. That is because the fill level is measured after the dispenser has finished dispensing food and this process lasts 4 seconds.
 
 These latencies are short enough to not affect the usability of the system and are compliant with the objectives set before the development.
 
-Data is transmitted every time the user asks to dispense food and every time food is dispensed (to store the fill level in the cloud). In the first case the message will have a fixed length of 22 bytes. In the second case the message will have a fixed length of 17 bytes. Clearly there will be overhead due to headers necessary to transmit the messages. MQTT-SN was chosen as the protocol to transmit messages because of its characteristics suitable for IoT applications, in particular for its small overhead.
+Data is transmitted every time the user asks to dispense food and every time food is dispensed (to store the fill level in the cloud). In the first case the message will have a fixed length of 8 bytes. In the second case the message will have a fixed length of 3 bytes. Clearly there will be overhead due to headers necessary to transmit the messages. MQTT-SN was chosen as the protocol to transmit messages because of its characteristics suitable for IoT applications, in particular for its small overhead.
+
+Here are some more precise results obtained using wireshark:
+- When the user asks to dispense from the web dashboard, there is only one incoming packet to the board of total size 77 bytes.
+- When the board needs to communicate to the broker the fill level, it outputs a first packet of size 77 bytes containing the topic, the broker answers with a 69 bytes packet and finally the board sends the fill level in a packet of size 72 bytes.
 
 ## Logic
 This IoT system follows the 'Sense-Think-Act' paradigm.
