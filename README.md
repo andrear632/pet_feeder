@@ -19,7 +19,7 @@ A transparent bridge written in python is used to forward messages to and from A
 
 Once data arrives to AWS IoTCore the computation proceeds on the AWS cloud using the following services: DynamoDB, Lambda, API Gateway, Amplify.
 
-<img src="./Media/diagram.png" width="80%">
+<img src="./Media/architecture.png" width="80%">
 
 ## Network
 In the network there will be transmitted only the fill level coming from the board and the dispense message going to the board. These messages are less than 10 bytes, so even a narrow band will be suitable for our use. Low latency is required to deliver the dispense message, as the user expects its action of clicking the button on the web dashboard to be executed in the range of 1 to 5 seconds.
