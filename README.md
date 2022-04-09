@@ -33,7 +33,7 @@ Data is transmitted every time the user asks to dispense food and every time foo
 
 Here are some more precise results obtained using wireshark:
 - When the user asks to dispense from the web dashboard, there is only one incoming packet to the board of total size 77 bytes.
-- When the board needs to communicate to the broker the fill level, it outputs a first packet of size 77 bytes containing the topic, the broker answers with a 69 bytes packet and finally the board sends the fill level in a packet of size 72 bytes.
+- When the board needs to communicate to the broker the fill level, it outputs a first packet of size 77 bytes containing the topic, the broker answers with a 69 bytes packet and finally the board sends the fill level in a packet of total size 72 bytes.
 
 ## Logic
 This IoT system follows the 'Sense-Think-Act' paradigm.
