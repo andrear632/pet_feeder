@@ -110,7 +110,9 @@ Two accessories were designed specifically for this project. All 3D models can b
 
 [Here](https://www.hackster.io/andrear632/automatic-pet-feeder-0c2639) is a blog post related to this project.
 
-[Here](https://dev.d26dl44y42s2gz.amplifyapp.com) is the dashboard.
+[Here](https://dev.d26dl44y42s2gz.amplifyapp.com) you can find the dashboard.
+
+Check my [LinkedIn](www.linkedin.com/in/andrea-rod) account!
 
 ## Gallery
 
