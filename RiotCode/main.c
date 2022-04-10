@@ -220,7 +220,7 @@ void sensor_init(void){ //initializes all the pins
     gpio_init(pin_step_4, GPIO_OUT);
 
     gpio_init(trigger_pin, GPIO_OUT);
-	gpio_init_int(echo_pin, GPIO_IN, GPIO_BOTH, &echo_cb, NULL); //imposta callback quando riceve input
+    gpio_init_int(echo_pin, GPIO_IN, GPIO_BOTH, &echo_cb, NULL); //imposta callback quando riceve input
 
     adc_init(ADC_LINE(0));
 
