@@ -74,6 +74,8 @@ Lambda functions:
 
 Policies were set up using AWS IAM (Identity and Access Management) to ensure proper communication between the above services.
 
+<img src="./Media/dashboard.png" width="80%">
+
 ## How to setup and run the system
 
 1. Configure the AWS cloud system:
