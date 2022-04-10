@@ -112,7 +112,7 @@ Two accessories were designed specifically for this project. All 3D models can b
 
 [Here](https://dev.d26dl44y42s2gz.amplifyapp.com) you can find the dashboard.
 
-Check my [LinkedIn](www.linkedin.com/in/andrea-rod) account!
+Check my [LinkedIn](https://www.linkedin.com/in/andrea-rod) account!
 
 ## Gallery
 
