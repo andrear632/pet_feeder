@@ -108,9 +108,7 @@ Two accessories were designed specifically for this project. All 3D models can b
 
 [Here](https://www.youtube.com/) is the video of a demonstration of the final system.
 
-[Here](https://www.hackster.io/) is a step-by-step tutorial.
-
-[Here](https://www.hackster.io/) is a blog post related to this project.
+[Here](https://www.hackster.io/andrear632/automatic-pet-feeder-0c2639) is a blog post related to this project.
 
 [Here](https://dev.d26dl44y42s2gz.amplifyapp.com) is the dashboard.
 
