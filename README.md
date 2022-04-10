@@ -13,7 +13,7 @@ When the container is empty the sensor is going to measure the distance from the
 - Stepper motor (28BYJ 48 + ULN 2003 driver): rotates a screw which dispenses the food.
 - Led: lights on when the food container is empty.
 
-The board is connected through MQTT-SN to an RSMB broker hosted on the machine the board is connected to. The connection is carried out using IPv6 and RIOT-OS tap interfaces. The board publishes on “topic_out” and subscribes to “topic_in” to receive messages from outside.
+The board is connected through MQTT-SN to a broker hosted on the machine the board is connected to. The connection is carried out using IPv6 and RIOT-OS tap interfaces. The board publishes on “topic_out” and subscribes to “topic_in” to receive messages from outside.
 
 A transparent bridge written in python is used to forward messages to and from AWS IoTCore. It runs on the machine the board is connected to. It reads messages from the local broker with “topic_out” and publishes them to AWS IoTCore on the same topic. It also reads messages from AWS IoTCore with “topic_in” and publishes them on the local broker with the same topic.
 
