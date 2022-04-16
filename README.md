@@ -101,9 +101,9 @@ In the folder mosquitto.rsmb/rsmb launch the command “./src/broker_mqtts confi
 
 ## Miscellaneous
 Some 3D models for printed parts were taken from the following links:
-- https://www.thingiverse.com/thing:14452
-- https://www.thingiverse.com/thing:548975
 - https://www.thingiverse.com/thing:3051036
+- https://www.thingiverse.com/thing:548975
+- https://www.thingiverse.com/thing:14452
 
 Two accessories were designed specifically for this project. All 3D models can be found in the 3D folder.
 
