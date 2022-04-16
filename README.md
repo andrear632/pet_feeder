@@ -108,7 +108,7 @@ Some 3D models for printed parts were taken from the following links:
 Two accessories were designed specifically for this project. All 3D models can be found in the 3D folder.
 
 
-[Here](https://www.youtube.com/) is the video of a demonstration of the final system.
+[Here](https://youtu.be/5z9hatsKNmI/) is the video of a demonstration of the final system.
 
 [Here](https://www.hackster.io/andrear632/automatic-pet-feeder-0c2639) is a blog post related to this project.
 
